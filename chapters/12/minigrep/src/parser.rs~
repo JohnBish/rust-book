@@ -1,0 +1,22 @@
+use std::{env, process};
+
+#[derive(Debug)]
+pub struct Params {
+    args: Vec<String>,
+}
+
+impl Params {
+    pub fn new() -> Params {
+        Params {
+            args: env::args()
+               .collect::<Vec<String>>().reverse()
+        }
+    }
+
+    pub fn next(&mut self) -> Result<String, ()> {
+        match self.args.pop() {
+            Some(value) => Ok(value),
+            None => Err(()),
+        }
+    }
+}

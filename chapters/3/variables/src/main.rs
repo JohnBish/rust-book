@@ -1,0 +1,17 @@
+const PI: f64 = 3.141592658979;
+
+fn main() {
+    println!("The value of PI is approximately {}", PI);
+    println!("0.1 plus 0.2 is {}", 0.1 + 0.2);
+
+    let tup: (_, char) = (1,'a');
+
+    let (_, name) = tup;
+
+    let pos = [0; 3];
+    let z_index = 2;
+
+    println!("{}", tup.1);
+    println!("{}", name);
+    println!("{}", pos[z_index]);
+}
